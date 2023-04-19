@@ -1,4 +1,4 @@
-package com.example.animalfacts.domain.usecases
+package com.example.animalfacts.domain.usecases.Favourites
 
 import com.example.animalfacts.data.repository.FactRepository
 import com.example.animalfacts.domain.model.Fact
