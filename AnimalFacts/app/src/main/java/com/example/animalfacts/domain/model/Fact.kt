@@ -1,9 +1,8 @@
-package com.example.animalfacts.ui.model
+package com.example.animalfacts.domain.model
 
-import com.example.animalfacts.domain.model.Fact
-import java.util.Date
+import java.util.*
 
-data class FactUi(
+data class Fact(
     val _id: String,
     val __v: Int,
     val text: String,
@@ -13,7 +12,7 @@ data class FactUi(
     val sentCount: Int
 )
 
-fun Fact.asFactUi(): FactUi = FactUi(
+fun FactEntity.asFact(): Fact = Fact(
     _id = _id,
     __v = __v,
     text =  text,
@@ -23,7 +22,7 @@ fun Fact.asFactUi(): FactUi = FactUi(
     sentCount = sentCount
 )
 
-fun FactUi.asFact(): Fact = Fact(
+fun Fact.asFactEntity(): FactEntity = FactEntity(
     _id = _id,
     __v = __v,
     text =  text,
