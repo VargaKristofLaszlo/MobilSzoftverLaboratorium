@@ -4,11 +4,14 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.example.animalfacts.domain.usecases.Favourites.FavouriteFactUseCases
 import com.example.animalfacts.feature.favourite_fact_list.FavouriteFactsState
+import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.asStateFlow
 import kotlinx.coroutines.launch
+import javax.inject.Inject
 
-class FavouriteFactViewModel(private val factOpertions: FavouriteFactUseCases): ViewModel()  {  private val _state = MutableStateFlow(
+@HiltViewModel
+class FavouriteFactViewModel @Inject constructor (factOpertions: FavouriteFactUseCases): ViewModel()  {  private val _state = MutableStateFlow(
     FavouriteFactsState()
 )
     val state = _state.asStateFlow()

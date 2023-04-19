@@ -11,7 +11,7 @@ import androidx.lifecycle.viewmodel.compose.viewModel
 @Composable
 fun FavouriteFactsScreen(
     onListItemClick: (String) -> Unit,
-    viewModel: FavouriteFactViewModel = viewModel(factory =  null) // TODO: Hilt-es inject
+    viewModel: FavouriteFactsViewModel = viewModel()
 ) {
     val state by viewModel.state.collectAsStateWithLifecycle()
 
