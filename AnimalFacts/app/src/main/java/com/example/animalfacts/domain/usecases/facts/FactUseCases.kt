@@ -1,4 +1,8 @@
 package com.example.animalfacts.domain.usecases.facts
 
-class FactUseCases {
+import com.example.animalfacts.network.FactService
+
+class FactUseCases(private val service: FactService) {
+    val loadFacts = LoadFactsUseCase(service)
+    val loadFact = LoadFactUseCase(service)
 }

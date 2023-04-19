@@ -1,10 +1,10 @@
-package com.example.animalfacts.feature.favourite_fact_list
+package com.example.animalfacts.feature.favourite_details
 
 import com.example.animalfacts.ui.model.FactUi
 
-data class FavouriteFactsState(
+data class FavouriteFactState(
     val isLoading: Boolean = false,
     val error: Throwable? = null,
     val isError: Boolean = error != null,
-    val facts: List<FactUi> = emptyList()
+    val facts: FactUi? = null
 )
