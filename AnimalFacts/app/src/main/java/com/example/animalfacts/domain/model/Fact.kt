@@ -1,5 +1,6 @@
 package com.example.animalfacts.domain.model
 
+import com.example.animalfacts.data.entities.FactEntity
 import java.util.*
 
 data class Fact(

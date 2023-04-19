@@ -1,7 +1,8 @@
 package com.example.animalfacts.domain.usecases
 
-import com.example.animalfacts.ui.model.Fact
-import com.example.animalfacts.ui.model.asFactEntity
+import com.example.animalfacts.data.repository.FactRepository
+import com.example.animalfacts.domain.model.Fact
+import com.example.animalfacts.domain.model.asFactEntity
 
 class SaveFavouriteFactUseCase(private val repository: FactRepository) {
 
