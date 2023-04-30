@@ -10,7 +10,10 @@ jobs:
   build:
 
     runs-on: ubuntu-latest
-
+    defaults:
+      run:
+        shell: bash
+        working-directory: ./AnimalFacts
     steps:
     - uses: actions/checkout@v3
     - name: set up JDK 11
@@ -21,8 +24,8 @@ jobs:
         cache: gradle
 
     - name: Grant execute permission for gradlew
-      run: chmod +x ./AnimalFacts/gradlew
+      run: chmod +x ./gradlew
     - name: Build with Gradle
-      run: ./AnimalFacts/gradlew build
+      run: ./gradlew build
       
       
