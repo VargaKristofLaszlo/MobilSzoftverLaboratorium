@@ -23,6 +23,6 @@ jobs:
     - name: Grant execute permission for gradlew
       run: chmod +x ./AnimalFacts/gradlew
     - name: Build with Gradle
-      run: ./AnimalFacts/AnimalFacts/gradlew build
+      run: ./AnimalFacts/gradlew build
       
       
