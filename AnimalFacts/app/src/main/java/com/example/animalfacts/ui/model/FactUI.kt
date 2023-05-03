@@ -9,7 +9,6 @@ data class FactUi(
     val text: String,
     val updatedAt: Date,
     val deleted: Boolean,
-    val source: String,
     val sentCount: Int
 )
 
@@ -19,7 +18,6 @@ fun Fact.asFactUi(): FactUi = FactUi(
     text =  text,
     updatedAt = updatedAt,
     deleted = deleted,
-    source = source,
     sentCount = sentCount
 )
 
@@ -29,6 +27,5 @@ fun FactUi.asFact(): Fact = Fact(
     text =  text,
     updatedAt = updatedAt,
     deleted = deleted,
-    source = source,
     sentCount = sentCount
 )

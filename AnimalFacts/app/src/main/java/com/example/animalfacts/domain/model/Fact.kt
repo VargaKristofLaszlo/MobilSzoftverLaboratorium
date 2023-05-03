@@ -9,7 +9,7 @@ data class Fact(
     val text: String,
     val updatedAt: Date,
     val deleted: Boolean,
-    val source: String,
+
     val sentCount: Int
 )
 
@@ -19,7 +19,6 @@ fun FactEntity.asFact(): Fact = Fact(
     text =  text,
     updatedAt = updatedAt,
     deleted = deleted,
-    source = source,
     sentCount = sentCount
 )
 
@@ -29,6 +28,5 @@ fun Fact.asFactEntity(): FactEntity = FactEntity(
     text =  text,
     updatedAt = updatedAt,
     deleted = deleted,
-    source = source,
     sentCount = sentCount
 )

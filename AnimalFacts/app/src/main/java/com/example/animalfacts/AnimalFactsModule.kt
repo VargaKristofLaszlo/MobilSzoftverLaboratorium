@@ -8,16 +8,12 @@ import com.example.animalfacts.data.repository.FactRepository
 import com.example.animalfacts.data.repository.FactRepositoryImpl
 import com.example.animalfacts.domain.usecases.facts.FactUseCases
 import com.example.animalfacts.network.FactService
-import dagger.Binds
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
-import dagger.hilt.android.components.ActivityComponent
 import dagger.hilt.android.components.ViewModelComponent
-import dagger.hilt.android.qualifiers.ActivityContext
 import dagger.hilt.android.qualifiers.ApplicationContext
 import dagger.hilt.components.SingletonComponent
-import javax.inject.Named
 import javax.inject.Singleton
 
 @Module

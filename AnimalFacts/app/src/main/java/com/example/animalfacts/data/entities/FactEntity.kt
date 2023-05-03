@@ -12,6 +12,5 @@ data class FactEntity(
     @ColumnInfo(name = "Text") val text: String,
     @ColumnInfo(name = "Update_at") val updatedAt: Date,
     @ColumnInfo(name = "Deleted") val deleted: Boolean,
-    @ColumnInfo(name = "Source") val source: String,
     @ColumnInfo(name = "SentCount") val sentCount: Int
 )

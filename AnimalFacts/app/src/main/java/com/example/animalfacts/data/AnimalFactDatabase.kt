@@ -7,7 +7,7 @@ import com.example.animalfacts.data.converters.DateConverter
 import com.example.animalfacts.data.dao.FactDao
 import com.example.animalfacts.data.entities.FactEntity
 
-@Database(entities = [FactEntity::class], version = 1)
+@Database(entities = [FactEntity::class], version = 1, exportSchema = false)
 @TypeConverters(DateConverter::class)
 abstract class AnimalFactDatabase: RoomDatabase() {
     abstract  val dao: FactDao
