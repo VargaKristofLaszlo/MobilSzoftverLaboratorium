@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">AnimalFacts</string>
+    <string name="network_error_message">Hiba jött elő a hálózati hívás közben</string>
+    <string name="empty_list">Nincs megjelenítendő adat</string>
 </resources>

@@ -1,15 +1,10 @@
 package com.example.animalfacts.network
 
 import com.example.animalfacts.domain.model.Fact
-import kotlinx.coroutines.flow.Flow
-import javax.inject.Inject
+import retrofit2.Call
 
-class FactService @Inject constructor() {
-    fun getFacts(animal_type: String, amount: Int): Flow<List<Fact>> {
-        TODO("Not yet implemented")
-    }
+interface FactService {
+    suspend fun getFacts(animal_type: String, amount: Int): List<Fact>
 
-    fun getFactById(id: String): Flow<Fact> {
-        TODO("Not yet implemented")
-    }
+    suspend fun getFactById(id: String): Fact
 }

@@ -6,18 +6,15 @@ import com.example.animalfacts.data.AnimalFactDatabase
 import com.example.animalfacts.data.dao.FactDao
 import com.example.animalfacts.data.repository.FactRepository
 import com.example.animalfacts.data.repository.FactRepositoryImpl
+import com.example.animalfacts.domain.usecases.Favourites.FavouriteFactUseCases
 import com.example.animalfacts.domain.usecases.facts.FactUseCases
 import com.example.animalfacts.network.FactService
-import dagger.Binds
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
-import dagger.hilt.android.components.ActivityComponent
 import dagger.hilt.android.components.ViewModelComponent
-import dagger.hilt.android.qualifiers.ActivityContext
 import dagger.hilt.android.qualifiers.ApplicationContext
 import dagger.hilt.components.SingletonComponent
-import javax.inject.Named
 import javax.inject.Singleton
 
 @Module
@@ -26,6 +23,11 @@ object  AnimalFactsModule {
     @Provides
     fun providesFactUseCases(factService: FactService): FactUseCases {
         return FactUseCases(factService)
+    }
+
+    @Provides
+    fun providesFavouriteFactUseCases(repository: FactRepository): FavouriteFactUseCases {
+        return FavouriteFactUseCases(repository)
     }
 
 }
