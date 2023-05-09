@@ -70,11 +70,11 @@ fun FactListScreen(
                         items(state.facts.size) { i ->
                             ListItem(
                                 headlineText = {
-                                    Row(verticalAlignment = Alignment.CenterVertically) {
+                                    Row(verticalAlignment = Alignment.CenterVertically, modifier = Modifier.clickable { viewModel.testDbSave()}) {
                                         Text(text = state.facts[i].text)
                                     }
                                 },
-                                modifier = Modifier.clickable(onClick = { onListItemClick(state.facts[i]._id) })
+                                modifier = Modifier.clickable(onClick = { onListItemClick(state.facts[i]._id) }),
                             )
                             if (i != state.facts.lastIndex) {
                                 Divider(

@@ -6,6 +6,7 @@ import com.example.animalfacts.data.AnimalFactDatabase
 import com.example.animalfacts.data.dao.FactDao
 import com.example.animalfacts.data.repository.FactRepository
 import com.example.animalfacts.data.repository.FactRepositoryImpl
+import com.example.animalfacts.domain.usecases.Favourites.FavouriteFactUseCases
 import com.example.animalfacts.domain.usecases.facts.FactUseCases
 import com.example.animalfacts.network.FactService
 import dagger.Module
@@ -22,6 +23,11 @@ object  AnimalFactsModule {
     @Provides
     fun providesFactUseCases(factService: FactService): FactUseCases {
         return FactUseCases(factService)
+    }
+
+    @Provides
+    fun providesFavouriteFactUseCases(repository: FactRepository): FavouriteFactUseCases {
+        return FavouriteFactUseCases(repository)
     }
 
 }
