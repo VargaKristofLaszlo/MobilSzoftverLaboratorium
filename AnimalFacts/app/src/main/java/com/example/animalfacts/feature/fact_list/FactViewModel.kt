@@ -1,9 +1,12 @@
 package com.example.animalfacts.feature.fact_list
 
+import android.widget.Toast
 import androidx.compose.runtime.MutableState
 import androidx.compose.runtime.mutableStateOf
+import androidx.compose.ui.platform.LocalContext
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
+import com.example.animalfacts.domain.model.Fact
 import com.example.animalfacts.domain.model.FactFilter
 import com.example.animalfacts.domain.model.asFact
 import com.example.animalfacts.domain.usecases.Favourites.FavouriteFactUseCases
@@ -30,24 +33,11 @@ class FactViewModel @Inject constructor (private val factOpertions: FactUseCases
         loadFacts()
     }
 
-    private  fun loadFacts() {
+     fun loadFacts() {
         viewModelScope.launch {
             _state.update { it.copy(isLoading = true) }
-            // Test loading from db
-            try {
-                CoroutineScope(coroutineContext).launch {
-                    val facts = favouriteOperations.loadFavouriteFacts().getOrThrow().map {
-                        it.asFactUi()
-                    }
-                    _state.update { it.copy(isLoading = false, facts = facts) }
-
-                }
-            }
-            catch (e: Exception) {
-                _state.update { it.copy(isLoading = false, error = e) }
-            }
             // Loading data from api
-          /*  try {
+            try {
                 CoroutineScope(coroutineContext).launch {
                     val facts = factOpertions.loadFacts(filter.value).getOrThrow().map {
                         it.asFactUi()
@@ -57,8 +47,33 @@ class FactViewModel @Inject constructor (private val factOpertions: FactUseCases
                 }
             }
             catch (e: Exception) {
+                // Loading from db
+                try {
+                    CoroutineScope(coroutineContext).launch {
+                        val facts = favouriteOperations.loadFavouriteFacts().getOrThrow().map {
+                            it.asFactUi()
+                        }
+                        _state.update { it.copy(isLoading = false, facts = facts) }
+
+                    }
+                }
+                catch (e: Exception) {
+                    _state.update { it.copy(isLoading = false, error = e) }
+                }
+            }
+        }
+    }
+
+    fun addToFavourites(fact: Fact){
+        viewModelScope.launch {
+            try {
+                CoroutineScope(coroutineContext).launch {
+                    favouriteOperations.saveFavouriteFact(fact)
+                }
+            }
+            catch (e: Exception) {
                 _state.update { it.copy(isLoading = false, error = e) }
-            }*/
+            }
         }
     }
 

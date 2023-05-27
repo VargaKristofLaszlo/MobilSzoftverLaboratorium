@@ -12,5 +12,6 @@ data class FactEntity(
     @ColumnInfo(name = "__v") val __v: Int,
     @ColumnInfo(name = "Text") val text: String,
     @ColumnInfo(name = "Deleted") val deleted: Boolean,
-    @ColumnInfo(name = "SentCount") val sentCount: Int
+    @ColumnInfo(name = "SentCount") val sentCount: Int,
+    @ColumnInfo(name = "Animal_type") val animal_type: String
 )
