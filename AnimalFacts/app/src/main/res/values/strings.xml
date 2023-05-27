@@ -2,4 +2,12 @@
     <string name="app_name">AnimalFacts</string>
     <string name="network_error_message">Hiba jött elő a hálózati hívás közben</string>
     <string name="empty_list">Nincs megjelenítendő adat</string>
+    <string name="home">Főoldal</string>
+    <string name="favourite">Kedvencek</string>
+    <string name="animal">Állat</string>
+    <string name="amount">Darabszám</string>
+    <string name="search">Seach</string>
+    <string name="database_error_message">Hiba jött elő az adatbázis hívás közben</string>
+    <string name="animal_type">Állatfajta</string>
+    <string name="fact">Tény</string>
 </resources>

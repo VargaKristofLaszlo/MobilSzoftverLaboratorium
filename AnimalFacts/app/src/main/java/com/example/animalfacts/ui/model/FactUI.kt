@@ -9,7 +9,8 @@ data class FactUi(
     val __v: Int,
     val text: String,
     val deleted: Boolean,
-    val sentCount: Int
+    val sentCount: Int,
+    val animal_type: String
 )
 
 fun Fact.asFactUi(): FactUi = FactUi(
@@ -17,7 +18,8 @@ fun Fact.asFactUi(): FactUi = FactUi(
     __v = __v,
     text =  text,
     deleted = deleted,
-    sentCount = sentCount
+    sentCount = sentCount,
+    animal_type = animal_type ?: "cat"
 )
 
 fun FactUi.asFact(): Fact = Fact(
@@ -25,5 +27,6 @@ fun FactUi.asFact(): Fact = Fact(
     __v = __v,
     text =  text,
     deleted = deleted,
-    sentCount = sentCount
+    sentCount = sentCount,
+    animal_type = animal_type
 )

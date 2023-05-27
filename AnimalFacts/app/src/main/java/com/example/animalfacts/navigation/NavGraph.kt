@@ -29,6 +29,7 @@ fun NavGraph(
         composable(Screen.Facts.route) {
             val viewModel = hiltViewModel<FactViewModel>()
             FactListScreen(
+                navController,
                 onListItemClick = {
                     navController.navigate(Screen.FactDetails.passId(it))
                 },viewModel
@@ -36,7 +37,9 @@ fun NavGraph(
         }
         composable(Screen.FactDetails.route) {
             val viewModel = hiltViewModel<FactDetailViewModel>()
-            FactDetailsScreen(onNavigateBack = {
+            FactDetailsScreen(
+                navController,
+                onNavigateBack = {
                 navController.popBackStack(
                     route = Screen.Facts.route,
                     inclusive = true
@@ -47,6 +50,7 @@ fun NavGraph(
         composable(Screen.FavouriteFacts.route) {
             val viewModel = hiltViewModel<FavouriteFactsViewModel>()
             FavouriteFactsScreen(
+                navController,
                 onListItemClick = {
                     navController.navigate(Screen.FavouriteFactDetails.passId(it))
                 },viewModel
@@ -54,7 +58,9 @@ fun NavGraph(
         }
         composable(Screen.FavouriteFactDetails.route) {
             val viewModel = hiltViewModel<FavouriteFactViewModel>()
-            FavouriteFactDetailsScreen(onNavigateBack = {
+            FavouriteFactDetailsScreen(
+                navController,
+                onNavigateBack = {
                     navController.popBackStack(
                         route = Screen.FavouriteFacts.route,
                         inclusive = true
